@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1945" />
+        <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/drawable/ic_list_black_24dp.xml" value="0.1945" />
+        <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1945" />
+        <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/layout/fragment_home.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2" />
         <entry key="..\:/Users/aleja/Documents/Proyectos Android Studio/EvaluacionPersonalPruebaAndroid/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2075" />
         <entry key="..\:/Users/aleja/Documents/Proyectos Android Studio/EvaluacionPersonalPruebaAndroid/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/aleja/Documents/Proyectos Android Studio/EvaluacionPersonalPruebaAndroid/app/src/main/res/layout-w936dp/activity_login.xml" value="0.1" />

@@ -8,4 +8,6 @@
     <string name="title_InputPassword">Contraseña</string>
     <string name="title_ButtonLogin">Ingresar</string>
     <string name="title_login">Iniciar Sesión</string>
+
+    <string name="title_new_evaluation">Nueva Evaluación</string>
 </resources>
