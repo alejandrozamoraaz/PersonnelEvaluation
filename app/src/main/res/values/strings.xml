@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Evaluacion de Personal</string>
+    <string name="title_home">Inicio</string>
+    <string name="title_list">Listado</string>
+    <string name="title_location">Ubicación</string>
+
+    <string name="title_InputEmail">Correo</string>
+    <string name="title_InputPassword">Contraseña</string>
+    <string name="title_ButtonLogin">Ingresar</string>
+    <string name="title_login">Iniciar Sesión</string>
+</resources>
