@@ -48,10 +48,10 @@ class LoginActivity : AppCompatActivity() {
         }
 
         if (binding.inputPassword.text.toString().isEmpty() || binding.inputPassword.length() <= 7){
-            //Toast.makeText(this,"8 caracteres mínimo", Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"8 caracteres mínimo", Toast.LENGTH_LONG).show()
             binding.inputPassword.setError("7 caracteres mínimo")
         }else if (!Pattern.compile("[0-9]").matcher(binding.inputPassword.text.toString()).find()){
-            //Toast.makeText(this,"Se necesita al menos un Número", Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"Se necesita al menos un Número", Toast.LENGTH_LONG).show()
             binding.inputPassword.setError("Se necesita al menos un Número")
         }else{
             binding.inputPassword.setError(null)
