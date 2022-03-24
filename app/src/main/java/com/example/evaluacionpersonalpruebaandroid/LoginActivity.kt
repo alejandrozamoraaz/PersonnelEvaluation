@@ -26,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        auth = FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance()
 
         val buttonLogin = findViewById<Button>(R.id.buttonLogin)
         buttonLogin.setOnClickListener {
@@ -48,10 +48,10 @@ class LoginActivity : AppCompatActivity() {
         }
 
         if (binding.inputPassword.text.toString().isEmpty() || binding.inputPassword.length() <= 7){
-            Toast.makeText(this,"8 caracteres mínimo", Toast.LENGTH_LONG).show()
+            //Toast.makeText(this,"8 caracteres mínimo", Toast.LENGTH_LONG).show()
             binding.inputPassword.setError("7 caracteres mínimo")
         }else if (!Pattern.compile("[0-9]").matcher(binding.inputPassword.text.toString()).find()){
-            Toast.makeText(this,"Se necesita al menos un Número", Toast.LENGTH_LONG).show()
+            //Toast.makeText(this,"Se necesita al menos un Número", Toast.LENGTH_LONG).show()
             binding.inputPassword.setError("Se necesita al menos un Número")
         }else{
             binding.inputPassword.setError(null)
@@ -60,14 +60,14 @@ class LoginActivity : AppCompatActivity() {
 
     fun LoginOrRegister(email: String, password: String){
         try {
-            auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) {  task ->
-                if (task.isSuccessful){
+            auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) {  taskSign ->
+                if (taskSign.isSuccessful){
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                     finish()
                 }else {
-                    auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
-                        if (task.isSuccessful) {
+                    auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) { taskCreate ->
+                        if (taskCreate.isSuccessful) {
                             Toast.makeText(this, "Usuario creado", Toast.LENGTH_LONG).show()
                         }
                     }
