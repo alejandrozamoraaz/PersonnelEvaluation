@@ -9,6 +9,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context=".NewEvaluationActivity">
@@ -18,7 +19,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="100dp"
             android:layout_marginEnd="50dp"
             android:text="@string/title_spinner_places"
             android:textSize="16sp"
@@ -32,7 +33,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="25dp"
             android:layout_marginEnd="50dp"
             android:contentDescription="@string/title_spinner_places"
             android:minHeight="48dp"
@@ -59,7 +59,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="25dp"
             android:layout_marginEnd="50dp"
             android:autofillHints=""
             android:ems="10"
@@ -86,21 +85,22 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
-            android:id="@+id/editTextDate"
+            android:id="@+id/editTextDateEvaluation"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="25dp"
             android:layout_marginEnd="50dp"
             android:autofillHints=""
+            android:editable="false"
             android:ems="10"
-            android:inputType="datetime"
+            android:enabled="false"
+            android:inputType="text"
             android:labelFor="@id/textViewDate"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewDate"
-            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+            tools:ignore="Deprecated,LabelFor,SpeakableTextPresentCheck,TextFields" />
 
         <Button
             android:id="@+id/buttonStartEvaluation"
@@ -109,10 +109,22 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="50dp"
             android:layout_marginEnd="50dp"
+            android:layout_marginBottom="50dp"
             android:text="@string/title_button_start"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextDateEvaluation" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView"
+            android:name="com.example.evaluacionpersonalpruebaandroid.NewEvaluationFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
