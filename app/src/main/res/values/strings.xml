@@ -17,6 +17,14 @@
     <string name="title_evaluation_date">Fecha de Evaluación</string>
     <string name="title_button_start">Iniciar</string>
 
-    <string name="title_fragment_new_evaluation">Puntos a Evaluar</string>
+    <string name="title_new_evaluation_point">Puntos a Evaluar</string>
+    <string name="title_check_1_new_evaluation">Pantalón Limpio y Planchado</string>
+    <string name="title_check_2_new_evaluation">Uñas (Limpias, bien cuidadas)</string>
+    <string name="title_check_3_new_evaluation">Cabello (Peinado)</string>
+    <string name="title_check_4_new_evaluation">Cubre Boca</string>
+    <string name="title_check_5_new_evaluation">Gorro</string>
+    <string name="title_check_6_new_evaluation">Saludo y Cortesía</string>
+    <string name="title_input_7_new_evaluation">Clientes Atentidos</string>
+    <string name="title_input_8_new_evaluation">Servicios Vendidos</string>
     <string name="title_button_finish">Finalizar</string>
 </resources>
