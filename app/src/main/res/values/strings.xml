@@ -7,17 +7,13 @@
 
     <string name="title_InputEmail">Correo</string>
     <string name="title_InputPassword">Contraseña</string>
+    <string name="title_remember_email">Recordar usuario</string>
     <string name="title_ButtonLogin">Ingresar</string>
-    <string name="title_login">Iniciar Sesión</string>
+    <string name="title_login">Inicio de Sesión</string>
 
     <string name="title_new_evaluation">Nueva Evaluación</string>
     <string name="title_spinner_places">Seleccione el Lugar</string>
-
-    <!--        hardcoded       -->
-
-    <!--<string-array name="places">
-        <item>Pricesmart</item>
-        <item>Colonia Plaza Once</item>
-        <item>Plaza central</item>
-    </string-array>-->
+    <string name="title_name_evaluated">Nombre del Evaluado</string>
+    <string name="title_evaluation_date">Fecha de Evaluación</string>
+    <string name="title_button_start">Iniciar</string>
 </resources>

@@ -12,12 +12,24 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.ktx.Firebase
 import java.util.regex.Pattern
 
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
+
+    public override fun onStart() {
+        super.onStart()
+
+        val currentUser = auth.currentUser
+        if(currentUser != null){
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,8 +40,8 @@ class LoginActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        val buttonLogin = findViewById<Button>(R.id.buttonLogin)
-        buttonLogin.setOnClickListener {
+        //val buttonLogin = findViewById<Button>(R.id.buttonLogin)
+        binding.buttonLogin.setOnClickListener {
             ValidateInputs()
             if (binding.inputEmail.error.isNullOrEmpty() && binding.inputPassword.error.isNullOrEmpty()) {
                 LoginOrRegister(binding.inputEmail.text.toString(), binding.inputPassword.text.toString())
