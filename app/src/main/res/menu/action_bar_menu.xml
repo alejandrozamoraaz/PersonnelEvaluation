@@ -4,6 +4,6 @@
 
     <item
         android:id="@+id/logout"
-        android:title="Salir"
-        app:showAsAction="always"/>
+        android:title="@string/title_back"
+        app:showAsAction="always|withText" />
 </menu>

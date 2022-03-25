@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Evaluacion de Personal</string>
+    <string name="title_back">&lt; Salir</string>
     <string name="title_home">Inicio</string>
     <string name="title_list">Listado</string>
     <string name="title_location">Ubicación</string>
@@ -10,4 +11,13 @@
     <string name="title_login">Iniciar Sesión</string>
 
     <string name="title_new_evaluation">Nueva Evaluación</string>
+    <string name="title_spinner_places">Seleccione el Lugar</string>
+
+    <!--        hardcoded       -->
+
+    <!--<string-array name="places">
+        <item>Pricesmart</item>
+        <item>Colonia Plaza Once</item>
+        <item>Plaza central</item>
+    </string-array>-->
 </resources>
