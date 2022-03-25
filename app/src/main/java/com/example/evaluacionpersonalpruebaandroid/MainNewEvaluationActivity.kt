@@ -1,7 +1,9 @@
 package com.example.evaluacionpersonalpruebaandroid
 
 import android.R
+import android.content.Intent
 import android.os.Build
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -9,22 +11,18 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import android.widget.DatePicker
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
-import com.example.evaluacionpersonalpruebaandroid.databinding.ActivityNewEvaluationBinding
+import com.example.evaluacionpersonalpruebaandroid.databinding.ActivityMainNewEvaluationBinding
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import java.util.*
 
-
-class NewEvaluationActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityNewEvaluationBinding
+class MainNewEvaluationActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainNewEvaluationBinding
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityNewEvaluationBinding.inflate(layoutInflater)
+        binding = ActivityMainNewEvaluationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val items = arrayOf("Pricesmart", "Colonia Plaza Once", "Plaza inter")
@@ -46,8 +44,15 @@ class NewEvaluationActivity : AppCompatActivity() {
         })
 
         binding.buttonStartEvaluation.setOnClickListener {
-            if (binding.inputNameEvaluated.text.toString().isEmpty()){
+            if (binding.inputNameEvaluated.text.toString().isEmpty()) {
                 binding.inputNameEvaluated.setError("Ingrese el Nombre")
+            } else {
+                //var mainFragment: NewEvaluationFragment = NewEvaluationFragment()
+                //supportFragmentManager.beginTransaction()
+                    //.replace(binding.ConstraintLayout.id, mainFragment).commit()
+
+                val intent = Intent(this, ContinueNewEvaluationActivity::class.java)
+                startActivity(intent)
             }
         }
     }

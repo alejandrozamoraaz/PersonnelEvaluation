@@ -5,12 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.evaluacionpersonalpruebaandroid.NewEvaluationActivity
-import com.example.evaluacionpersonalpruebaandroid.R
+import com.example.evaluacionpersonalpruebaandroid.MainNewEvaluationActivity
 import com.example.evaluacionpersonalpruebaandroid.databinding.FragmentHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -34,7 +32,7 @@ class HomeFragment : Fragment() {
 
         if (user != null){
             binding.buttonNewEvaluation.setOnClickListener {
-                val intent = Intent(activity, NewEvaluationActivity::class.java)
+                val intent = Intent(activity, MainNewEvaluationActivity::class.java)
                 startActivity(intent)
             }
         }
