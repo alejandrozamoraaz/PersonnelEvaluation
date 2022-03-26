@@ -13,13 +13,13 @@
         tools:context=".ContinueNewEvaluationActivity">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewPointsToEvaluate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginTop="50dp"
             android:layout_marginEnd="50dp"
-            android:text="@string/title_new_evaluation_point"
+            android:text="@string/title_points_to_evaluate"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -28,7 +28,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/checkLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
@@ -37,66 +37,66 @@
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
+            app:layout_constraintTop_toBottomOf="@+id/textViewPointsToEvaluate">
 
             <Switch
-                android:id="@+id/switch1NewEvaluation"
+                android:id="@+id/checkCleanSuit"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:text="@string/title_check_1_new_evaluation"
+                android:text="@string/title_check_clean_suit"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <Switch
-                android:id="@+id/switch2NewEvaluation"
+                android:id="@+id/checkCleanNails"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:text="@string/title_check_2_new_evaluation"
+                android:text="@string/title_check_clean_nails"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <Switch
-                android:id="@+id/switch3NewEvaluation"
+                android:id="@+id/checkCombedHair"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:text="@string/title_check_3_new_evaluation"
+                android:text="@string/title_check_combed_hair"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <Switch
-                android:id="@+id/switch4NewEvaluation"
+                android:id="@+id/checkFaceMask"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:text="@string/title_check_4_new_evaluation"
+                android:text="@string/title_check_face_mask"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <Switch
-                android:id="@+id/switch5_NewEvaluation"
+                android:id="@+id/checkCap"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:text="@string/title_check_5_new_evaluation"
+                android:text="@string/title_check_cap"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <Switch
-                android:id="@+id/switch6NewEvaluation"
+                android:id="@+id/checkCourtesy"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:text="@string/title_check_6_new_evaluation"
+                android:text="@string/title_check_courtesy"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textViewClientsServed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginTop="25dp"
-            android:text="@string/title_input_7_new_evaluation"
+            android:text="@string/title_input_clients_served"
             android:textColor="@color/black"
-            app:layout_constraintEnd_toStartOf="@+id/input7NewEvaluation"
+            app:layout_constraintEnd_toStartOf="@+id/inputClientsServed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/checkLayout"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
-            android:id="@+id/input7NewEvaluation"
+            android:id="@+id/inputClientsServed"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
@@ -105,28 +105,28 @@
             android:autofillHints=""
             android:ems="10"
             android:inputType="number"
-            android:labelFor="@id/textView2"
+            android:labelFor="@id/textViewClientsServed"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:layout_constraintStart_toEndOf="@+id/textViewClientsServed"
+            app:layout_constraintTop_toBottomOf="@+id/checkLayout"
             tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textViewServicesSold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginTop="25dp"
-            android:text="@string/title_input_8_new_evaluation"
+            android:text="@string/title_input_services_sold"
             android:textColor="@color/black"
-            app:layout_constraintEnd_toStartOf="@+id/input8NewEvaluation"
+            app:layout_constraintEnd_toStartOf="@+id/inputServicesSold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input7NewEvaluation"
+            app:layout_constraintTop_toBottomOf="@+id/inputClientsServed"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
-            android:id="@+id/input8NewEvaluation"
+            android:id="@+id/inputServicesSold"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
@@ -135,12 +135,12 @@
             android:autofillHints=""
             android:ems="10"
             android:inputType="number"
-            android:labelFor="@id/textView3"
+            android:labelFor="@id/textViewServicesSold"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/textView3"
-            app:layout_constraintTop_toBottomOf="@+id/input7NewEvaluation"
+            app:layout_constraintStart_toEndOf="@+id/textViewServicesSold"
+            app:layout_constraintTop_toBottomOf="@+id/inputClientsServed"
             tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
         <Button
@@ -155,7 +155,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input8NewEvaluation" />
+            app:layout_constraintTop_toBottomOf="@+id/inputServicesSold" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
