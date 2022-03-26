@@ -1,6 +1,8 @@
 package com.example.evaluacionpersonalpruebaandroid.model
 
-data class EvaluationPlaces(var gpsIdPlace: String, var namePlace: String){
+import com.google.android.gms.maps.model.LatLng
+
+data class EvaluationPlaces(var gpsIdPlace: LatLng, var namePlace: String){
     override fun toString(): String {
         return namePlace
     }

@@ -117,5 +117,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextDateEvaluation" />
 
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:keepScreenOn="false"
+            android:visibility="invisible"
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
