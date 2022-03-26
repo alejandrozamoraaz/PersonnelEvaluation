@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.secrets_gradle_plugin' version '0.5'
 }
 
 android {
@@ -55,6 +56,8 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:29.2.1')
     implementation 'com.google.firebase:firebase-common-ktx:20.1.0'
     implementation 'com.google.firebase:firebase-auth:21.0.2'
+
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
 }
 
 apply plugin: 'com.android.application'
