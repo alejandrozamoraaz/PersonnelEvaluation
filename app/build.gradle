@@ -58,6 +58,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:21.0.2'
 
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
+    implementation 'com.google.android.gms:play-services-location:19.0.1'
 }
 
 apply plugin: 'com.android.application'

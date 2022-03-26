@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_location"
-        android:name="com.example.evaluacionpersonalpruebaandroid.ui.location.LocationFragment"
+        android:name="com.example.evaluacionpersonalpruebaandroid.ui.LocationFragment"
         android:label="@string/title_location"
         tools:layout="@layout/fragment_location" />
 </navigation>
