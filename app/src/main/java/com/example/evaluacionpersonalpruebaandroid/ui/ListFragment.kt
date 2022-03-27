@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.evaluacionpersonalpruebaandroid.adapter.ResumeListCard
 import com.example.evaluacionpersonalpruebaandroid.databinding.FragmentListBinding
+import com.example.evaluacionpersonalpruebaandroid.model.ResumeCard
 import com.google.firebase.firestore.FirebaseFirestore
 
 class ListFragment : Fragment() {
@@ -23,24 +25,19 @@ class ListFragment : Fragment() {
         _binding = FragmentListBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        binding.list.layoutManager = LinearLayoutManager(context)
-
-
         val db = FirebaseFirestore.getInstance()
+        val list: ArrayList<ResumeCard> = ArrayList()
 
-        val i = db.collection("evaluation_records")
-        val query = i.whereEqualTo("namePlace", "PriceSmart")
-            query.get()//val queryDocument: QueryDocumentSnapshot = query
-            .addOnSuccessListener { result ->
-                for (document in result) {
-
-                    Toast.makeText(requireContext(),"${document.data.values}", Toast.LENGTH_LONG).show()
-                }
+        db.collection("evaluation_records").get().addOnSuccessListener{ result ->
+            for (document in result) {
+                list.add(ResumeCard(document.data["nameEvaluated"].toString(), document.data["namePlace"].toString(), document.data["dateEvaluation"].toString()))
             }
-            .addOnFailureListener {
-                Toast.makeText(requireContext(), "Error getting documents.", Toast.LENGTH_LONG).show()
-            }
-
+            binding.list.layoutManager = LinearLayoutManager(context)
+            val adapter = ResumeListCard(list)
+            binding.list.adapter = adapter
+        }.addOnFailureListener {
+            Toast.makeText(requireContext(), "Error getting documents.", Toast.LENGTH_LONG).show()
+        }
 
         return root
     }
