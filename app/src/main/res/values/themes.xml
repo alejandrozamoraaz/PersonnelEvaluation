@@ -13,9 +13,4 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
-
-    <!--<style name="Theme.EvaluacionPersonalPruebaAndroid.Fullscreen" parent="Theme.EvaluacionPersonalPruebaAndroid">
-        <item name="android:windowActionBarOverlay">@color/purple_200</item>
-        <item name="android:windowBackground">@color/purple_700</item>
-    </style>-->
 </resources>
