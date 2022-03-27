@@ -3,8 +3,8 @@
     package="com.example.evaluacionpersonalpruebaandroid">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -13,20 +13,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EvaluacionPersonalPruebaAndroid">
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="${GOOGLE_MAPS_API_KEY}" />
 
         <activity
-            android:name=".ContinueNewEvaluationActivity"
-            android:label="@string/title_new_evaluation"
-            android:exported="false" />
-        <activity
-            android:name=".MainNewEvaluationActivity"
-            android:label="@string/title_new_evaluation"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
+            android:name=".SplashScreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
             <intent-filter>
@@ -36,7 +30,21 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="true" />
+        <activity
+            android:name=".MainNewEvaluationActivity"
+            android:exported="false"
+            android:label="@string/title_new_evaluation" />
+        <activity
+            android:name=".ContinueNewEvaluationActivity"
+            android:exported="false"
+            android:label="@string/title_new_evaluation" />
     </application>
+
 </manifest>

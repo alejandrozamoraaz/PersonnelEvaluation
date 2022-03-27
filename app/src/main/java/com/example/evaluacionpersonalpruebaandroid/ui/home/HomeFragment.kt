@@ -26,16 +26,16 @@ class HomeFragment : Fragment() {
         user = FirebaseAuth.getInstance().currentUser!!
         (activity as AppCompatActivity).supportActionBar?.title = "Bienvenido: " + user.email
 
-        val homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        //val homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        if (user != null){
-            binding.buttonNewEvaluation.setOnClickListener {
-                val intent = Intent(activity, MainNewEvaluationActivity::class.java)
-                startActivity(intent)
-            }
+        //if (user != null){
+        binding.buttonNewEvaluation.setOnClickListener {
+            val intent = Intent(activity, MainNewEvaluationActivity::class.java)
+            startActivity(intent)
         }
+        //}
         //val textView: TextView = binding.textHome
         //homeViewModel.text.observe(viewLifecycleOwner) {
             //textView.text = it
