@@ -12,4 +12,4 @@ data class EvaluationRecord(var gpsIdPlace: String,
                             val courtesy: Boolean,
                             val clientsServed: Int,
                             val servicesSold: Int
-) {}
+)

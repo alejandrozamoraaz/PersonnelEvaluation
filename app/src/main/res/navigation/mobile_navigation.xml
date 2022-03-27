@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.evaluacionpersonalpruebaandroid.ui.home.HomeFragment"
+        android:name="com.example.evaluacionpersonalpruebaandroid.ui.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_list"
-        android:name="com.example.evaluacionpersonalpruebaandroid.ui.list.ListFragment"
+        android:name="com.example.evaluacionpersonalpruebaandroid.ui.ListFragment"
         android:label="@string/title_list"
         tools:layout="@layout/fragment_list" />
 

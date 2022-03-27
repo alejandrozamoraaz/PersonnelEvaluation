@@ -1,4 +1,4 @@
-package com.example.evaluacionpersonalpruebaandroid.ui.home
+package com.example.evaluacionpersonalpruebaandroid.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.evaluacionpersonalpruebaandroid.MainNewEvaluationActivity
 import com.example.evaluacionpersonalpruebaandroid.databinding.FragmentHomeBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -16,30 +15,23 @@ import com.google.firebase.auth.FirebaseUser
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
+    private lateinit var user: FirebaseUser
+
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-    private lateinit var user: FirebaseUser
-
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         user = FirebaseAuth.getInstance().currentUser!!
         (activity as AppCompatActivity).supportActionBar?.title = "Bienvenido: " + user.email
 
-        //val homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        //if (user != null){
         binding.buttonNewEvaluation.setOnClickListener {
             val intent = Intent(activity, MainNewEvaluationActivity::class.java)
             startActivity(intent)
         }
-        //}
-        //val textView: TextView = binding.textHome
-        //homeViewModel.text.observe(viewLifecycleOwner) {
-            //textView.text = it
-        //}
 
         return root
     }
