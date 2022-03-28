@@ -126,22 +126,19 @@
           android:layout_marginStart="50dp"
           android:layout_marginTop="25dp"
           android:text="@string/title_input_clients_served"
-          app:layout_constraintEnd_toStartOf="@+id/inputClientsServedDialog"
+          app:layout_constraintEnd_toStartOf="@+id/clientsServedDialog"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-      <EditText
-          android:id="@+id/inputClientsServedDialog"
+      <TextView
+          android:id="@+id/clientsServedDialog"
           android:layout_width="0dp"
           android:layout_height="wrap_content"
           android:layout_marginStart="80dp"
-          android:layout_marginTop="20dp"
+          android:layout_marginTop="25dp"
           android:layout_marginEnd="50dp"
           android:autofillHints=""
           android:ems="10"
-          android:enabled="false"
-          android:inputType="textPersonName"
-          android:minHeight="48dp"
           android:textAlignment="center"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toEndOf="@+id/textView2"
@@ -158,24 +155,21 @@
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-      <EditText
-          android:id="@+id/inputServicesSoldDialog"
+      <TextView
+          android:id="@+id/servicesSoldDialog"
           android:layout_width="0dp"
           android:layout_height="wrap_content"
           android:layout_marginStart="80dp"
-          android:layout_marginTop="20dp"
+          android:layout_marginTop="25dp"
           android:layout_marginEnd="50dp"
           android:layout_marginBottom="50dp"
           android:autofillHints=""
           android:ems="10"
-          android:enabled="false"
-          android:inputType="textPersonName"
-          android:minHeight="48dp"
           android:textAlignment="center"
           app:layout_constraintBottom_toBottomOf="parent"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toEndOf="@+id/textView3"
-          app:layout_constraintTop_toBottomOf="@+id/inputClientsServedDialog"
+          app:layout_constraintTop_toBottomOf="@+id/clientsServedDialog"
           tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
    </androidx.constraintlayout.widget.ConstraintLayout>

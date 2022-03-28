@@ -18,7 +18,7 @@ class ResumenListCard(private val modelList: List<EvaluationRecord>) :
 
 
     private lateinit var context:Context
-    lateinit var viewDetails: View
+    private lateinit var viewDetails: View
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val viewResume: View = LayoutInflater.from(parent.context).inflate(R.layout.card_evaluated_resumen, parent, false)
@@ -30,9 +30,6 @@ class ResumenListCard(private val modelList: List<EvaluationRecord>) :
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        //val name: String = "Nombre: " + modelList[position].nameEvaluated
-        //val place: String = "Lugar: " + modelList[position].namePlace
-        //val date: String = "Fecha: " + modelList[position].dateEvaluation
         holder.nameEvaluated.text = "Nombre: " + modelList[position].nameEvaluated
         holder.placeEvaluation.text = "Lugar: " + modelList[position].namePlace
         holder.dateEvaluation.text = "Fecha: " + modelList[position].dateEvaluation
@@ -40,24 +37,24 @@ class ResumenListCard(private val modelList: List<EvaluationRecord>) :
         holder.nameEvaluatedDialog.text = "Nombre: " + modelList[position].nameEvaluated
         holder.placeEvaluationDialog.text = "Lugar: " + modelList[position].namePlace
         holder.dateEvaluationDialog.text = "Fecha: " + modelList[position].dateEvaluation
+
         holder.cleanSuit.isChecked = modelList[position].cleanSuit
         holder.cleanNails.isChecked = modelList[position].cleanNails
         holder.combedHair.isChecked = modelList[position].combedHair
         holder.faceMask.isChecked = modelList[position].faceMask
         holder.cap.isChecked = modelList[position].cap
         holder.courtesy.isChecked = modelList[position].courtesy
-        holder.clientsServed.text.insert(0, modelList[position].clientsServed.toString())
-        holder.servicesSold.text.insert(0, modelList[position].servicesSold.toString())
+        holder.clientsServed.text = modelList[position].clientsServed.toString()
+        holder.servicesSold.text = modelList[position].servicesSold.toString()
 
-        holder.item.setOnClickListener {
-            if (viewDetails.getParent() != null) {
-                (viewDetails.getParent() as ViewGroup).removeView(viewDetails)
+        holder.itemCard.setOnClickListener {
+            if (viewDetails.parent != null) {
+                (viewDetails.parent as ViewGroup).removeView(viewDetails)
             }else {
                 val dialog = BottomSheetDialog(context)
                 dialog.setContentView(viewDetails)
                 dialog.show()
-                ///dialog.show(FragmentManager.findFragment<EvaluatedDetailsDialog>(v2).parentFragmentManager,"dialog")
-                //Toast.makeText(conte,"${modelList[position].name} ${modelList[position].place} ${modelList[position].date}",Toast.LENGTH_LONG).show()
+                Toast.makeText(context,"${modelList[position].nameEvaluated} ${modelList[position].namePlace} ${modelList[position].dateEvaluation}",Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -87,9 +84,9 @@ class ResumenListCard(private val modelList: List<EvaluationRecord>) :
         val cap: Switch = viewDialog.findViewById(R.id.checkCapDialog)
         @SuppressLint("UseSwitchCompatOrMaterialCode")
         val courtesy: Switch = viewDialog.findViewById(R.id.checkCourtesyDialog)
-        val clientsServed: EditText = viewDialog.findViewById(R.id.inputClientsServedDialog)
-        val servicesSold: EditText = viewDialog.findViewById(R.id.inputServicesSoldDialog)
+        val clientsServed: TextView = viewDialog.findViewById(R.id.clientsServedDialog)
+        val servicesSold: TextView = viewDialog.findViewById(R.id.servicesSoldDialog)
 
-        val item:CardView = viewCard.findViewById(R.id.itemCard)
+        val itemCard:CardView = viewCard.findViewById(R.id.itemCard)
     }
 }

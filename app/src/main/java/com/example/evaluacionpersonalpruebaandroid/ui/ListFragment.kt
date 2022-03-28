@@ -36,7 +36,7 @@ class ListFragment : Fragment() {
                     document.data["gpsIdPlace"].toString(),
                     document.data["namePlace"].toString(),
                     document.data["nameEvaluated"].toString(),
-                    document.data["dateEvaluation"].toString(),true,true,true,true,true,true,0,1
+                    document.data["dateEvaluation"].toString(),false,true,false,true,true,true,0,1
                     //document.data["checkCleanSuit"] as Boolean,
                     //document.data["checkCleanNails"] as Boolean,
                     //document.data["checkCombedHair"] as Boolean,
