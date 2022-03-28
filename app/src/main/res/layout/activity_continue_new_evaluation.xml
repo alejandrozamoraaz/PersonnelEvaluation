@@ -43,6 +43,7 @@
                 android:id="@+id/checkCleanSuit"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:checked="false"
                 android:text="@string/title_check_clean_suit"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
