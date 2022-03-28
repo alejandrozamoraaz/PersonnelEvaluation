@@ -10,13 +10,19 @@
         <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/drawable/ic_list_black_24dp.xml" value="0.1945" />
         <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1945" />
         <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/layout-v24/activity_continue_new_evaluation.xml" value="0.19701086956521738" />
-        <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/layout/activity_continue_new_evaluation.xml" value="0.33" />
+        <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/layout/activity_continue_new_evaluation.xml" value="0.22" />
         <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/layout/activity_login.xml" value="0.17" />
         <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/layout/activity_main.xml" value="0.17" />
         <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/layout/activity_main_new_evaluation.xml" value="0.19701086956521738" />
         <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/layout/activity_new_evaluation.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/layout/activity_splash_screen.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/layout/card_evaluated_details.xml" value="0.1816123188405797" />
         <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/layout/card_evaluated_resume.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/layout/card_evaluated_resumen.xml" value="0.1" />
+        <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/layout/fragment_card_dialog_list_dialog.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/layout/fragment_card_dialog_list_dialog_item.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/layout/fragment_card_evaluated_details_dialog.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/layout/fragment_evaluated_details_dialog.xml" value="0.25" />
         <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/layout/fragment_home.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/layout/fragment_item_list_dialog_list_dialog.xml" value="0.19701086956521738" />
         <entry key="..\:/Users/aleja/Documents/GitHub/PersonnelEvaluation/app/src/main/res/layout/fragment_item_list_dialog_list_dialog_item.xml" value="0.19701086956521738" />

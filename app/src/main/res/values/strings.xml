@@ -18,6 +18,7 @@
     <string name="title_button_start">Iniciar</string>
 
     <string name="title_points_to_evaluate">Puntos a Evaluar</string>
+    <string name="title_points_evaluated">Puntos Evaluados</string>
     <string name="title_check_clean_suit">Pantalón Limpio y Planchado</string>
     <string name="title_check_clean_nails">Uñas (Limpias, bien cuidadas)</string>
     <string name="title_check_combed_hair">Cabello (Peinado)</string>
@@ -27,4 +28,6 @@
     <string name="title_input_clients_served">Clientes Atentidos</string>
     <string name="title_input_services_sold">Servicios Vendidos</string>
     <string name="title_button_finish">Finalizar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

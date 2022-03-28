@@ -7,10 +7,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.evaluacionpersonalpruebaandroid.adapter.ResumeListCard
+import com.example.evaluacionpersonalpruebaandroid.adapter.ResumenListCard
 import com.example.evaluacionpersonalpruebaandroid.databinding.FragmentListBinding
-import com.example.evaluacionpersonalpruebaandroid.model.ResumeCard
+import com.example.evaluacionpersonalpruebaandroid.model.EvaluationRecord
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.toObject
 
 class ListFragment : Fragment() {
 
@@ -26,20 +27,39 @@ class ListFragment : Fragment() {
         val root: View = binding.root
 
         val db = FirebaseFirestore.getInstance()
-        val list: ArrayList<ResumeCard> = ArrayList()
+        val list: ArrayList<EvaluationRecord> = ArrayList()
 
         db.collection("evaluation_records").get().addOnSuccessListener{ result ->
             for (document in result) {
-                list.add(ResumeCard(document.data["nameEvaluated"].toString(), document.data["namePlace"].toString(), document.data["dateEvaluation"].toString()))
+                //document.toObject<EvaluationRecord>()
+                list.add(EvaluationRecord(
+                    document.data["gpsIdPlace"].toString(),
+                    document.data["namePlace"].toString(),
+                    document.data["nameEvaluated"].toString(),
+                    document.data["dateEvaluation"].toString(),true,true,true,true,true,true,0,1
+                    //document.data["checkCleanSuit"] as Boolean,
+                    //document.data["checkCleanNails"] as Boolean,
+                    //document.data["checkCombedHair"] as Boolean,
+                    //document.data["checkFaceMask"] as Boolean,
+                    //document.data["checkCap"] as Boolean,
+                    //document.data["checkCourtesy"] as Boolean,
+                    //document.data["inputClientsServed"] as Int,
+                    //document.data["inputServicesSold"] as Int
+                ))
             }
+
             binding.list.layoutManager = LinearLayoutManager(context)
-            val adapter = ResumeListCard(list)
+            val adapter = ResumenListCard(list)
             binding.list.adapter = adapter
         }.addOnFailureListener {
             Toast.makeText(requireContext(), "Error getting documents.", Toast.LENGTH_LONG).show()
         }
-
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
     }
 
     override fun onDestroyView() {
