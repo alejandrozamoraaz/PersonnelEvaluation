@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class EvaluatedDetailsDialog : BottomSheetDialogFragment() {
+class EvaluatedDetailsDialog() : BottomSheetDialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_evaluated_details_dialog, container, false)

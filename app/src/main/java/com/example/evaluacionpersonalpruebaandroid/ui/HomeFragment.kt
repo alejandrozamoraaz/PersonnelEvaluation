@@ -1,10 +1,15 @@
 package com.example.evaluacionpersonalpruebaandroid.ui
 
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.evaluacionpersonalpruebaandroid.MainNewEvaluationActivity
@@ -28,9 +33,13 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        binding.buttonNewEvaluation.setOnClickListener {
-            val intent = Intent(activity, MainNewEvaluationActivity::class.java)
-            startActivity(intent)
+        if(isLocationEnabled(requireContext()) == true){
+            binding.buttonNewEvaluation.setOnClickListener {
+                val intent = Intent(activity, MainNewEvaluationActivity::class.java)
+                startActivity(intent)
+            }
+        }else{
+            Toast.makeText(requireContext(),"Active la Ubicación", Toast.LENGTH_LONG).show()
         }
 
         return root
@@ -39,6 +48,26 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    fun isLocationEnabled(context: Context): Boolean {
+        var locationMode = 0
+        val locationProviders: String
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            locationMode = try {
+                Settings.Secure.getInt(context.getContentResolver(), Settings.Secure.LOCATION_MODE)
+            } catch (e: Settings.SettingNotFoundException) {
+                e.printStackTrace()
+                return false
+            }
+            locationMode != Settings.Secure.LOCATION_MODE_OFF
+        } else {
+            locationProviders = Settings.Secure.getString(
+                context.getContentResolver(),
+                Settings.Secure.LOCATION_PROVIDERS_ALLOWED
+            )
+            !TextUtils.isEmpty(locationProviders)
+        }
     }
 
     //override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -2,13 +2,18 @@ package com.example.evaluacionpersonalpruebaandroid
 
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
+import android.provider.Settings.SettingNotFoundException
+import android.text.TextUtils
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -21,6 +26,7 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+
 
 class MainNewEvaluationActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var binding: ActivityMainNewEvaluationBinding
@@ -51,17 +57,18 @@ class MainNewEvaluationActivity : AppCompatActivity(), OnMapReadyCallback {
             if (binding.inputNameEvaluated.text.toString().isEmpty()) {
                 binding.inputNameEvaluated.error = "Ingrese el Nombre"
             }else {
+
                 gpsIdPlace = binding.spinnerPlaces.selectedItem as EvaluationPlaces
 
                 //if(gpsIdPlace.gpsIdPlace != currentLatLong){
-                    //Toast.makeText(this,"${gpsIdPlace.gpsIdPlace} --- ${currentLatLong}",Toast.LENGTH_LONG).show()
+                //Toast.makeText(this,"${gpsIdPlace.gpsIdPlace} --- ${currentLatLong}",Toast.LENGTH_LONG).show()
                 //}else {
-                    val intent = Intent(this, ContinueNewEvaluationActivity::class.java)
-                    intent.putExtra("gpsIdPlace", gpsIdPlace.gpsIdPlace)
-                    intent.putExtra("namePlace", gpsIdPlace.namePlace)
-                    intent.putExtra("nameEvaluated", binding.inputNameEvaluated.text.toString())
-                    intent.putExtra("dateEvaluation",binding.editTextDateEvaluation.text.toString())
-                    startActivity(intent)
+                val intent = Intent(this, ContinueNewEvaluationActivity::class.java)
+                intent.putExtra("IdPlace", gpsIdPlace.gpsIdPlace.toString())
+                intent.putExtra("namePlace", gpsIdPlace.namePlace)
+                intent.putExtra("nameEvaluated", binding.inputNameEvaluated.text.toString())
+                intent.putExtra("dateEvaluation",binding.editTextDateEvaluation.text.toString())
+                startActivity(intent)
                 //}
             }
         }
@@ -92,7 +99,6 @@ class MainNewEvaluationActivity : AppCompatActivity(), OnMapReadyCallback {
         placesList.add(EvaluationPlaces(LatLng(12.0730092,-86.2225334), "PriceSmart"))
         placesList.add(EvaluationPlaces(LatLng(12.076579,-86.222108), "Colonia Plaza Once"))
         placesList.add(EvaluationPlaces(LatLng(12.1438966,-86.2761858), "Plaza inter"))
-        placesList.add(EvaluationPlaces(LatLng(11.8602507,-86.2159801),"Hogar"))
 
         return placesList
     }

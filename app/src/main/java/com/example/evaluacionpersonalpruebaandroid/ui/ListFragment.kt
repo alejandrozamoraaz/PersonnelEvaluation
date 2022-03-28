@@ -11,7 +11,6 @@ import com.example.evaluacionpersonalpruebaandroid.adapter.ResumenListCard
 import com.example.evaluacionpersonalpruebaandroid.databinding.FragmentListBinding
 import com.example.evaluacionpersonalpruebaandroid.model.EvaluationRecord
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.toObject
 
 class ListFragment : Fragment() {
 
@@ -31,20 +30,19 @@ class ListFragment : Fragment() {
 
         db.collection("evaluation_records").get().addOnSuccessListener{ result ->
             for (document in result) {
-                //document.toObject<EvaluationRecord>()
                 list.add(EvaluationRecord(
                     document.data["gpsIdPlace"].toString(),
                     document.data["namePlace"].toString(),
                     document.data["nameEvaluated"].toString(),
-                    document.data["dateEvaluation"].toString(),false,true,false,true,true,true,0,1
-                    //document.data["checkCleanSuit"] as Boolean,
-                    //document.data["checkCleanNails"] as Boolean,
-                    //document.data["checkCombedHair"] as Boolean,
-                    //document.data["checkFaceMask"] as Boolean,
-                    //document.data["checkCap"] as Boolean,
-                    //document.data["checkCourtesy"] as Boolean,
-                    //document.data["inputClientsServed"] as Int,
-                    //document.data["inputServicesSold"] as Int
+                    document.data["dateEvaluation"].toString(),
+                    document.data["cleanSuit"].toString().toBoolean(),
+                    document.data["cleanNails"].toString().toBoolean(),
+                    document.data["combedHair"].toString().toBoolean(),
+                    document.data["faceMask"].toString().toBoolean(),
+                    document.data["cap"].toString().toBoolean(),
+                    document.data["courtesy"].toString().toBoolean(),
+                    document.data["clientsServed"].toString().toInt(),
+                    document.data["servicesSold"].toString().toInt()
                 ))
             }
 
@@ -55,11 +53,6 @@ class ListFragment : Fragment() {
             Toast.makeText(requireContext(), "Error getting documents.", Toast.LENGTH_LONG).show()
         }
         return root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
     }
 
     override fun onDestroyView() {

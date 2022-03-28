@@ -32,7 +32,7 @@ class ContinueNewEvaluationActivity : AppCompatActivity() {
                 }
                 else -> {
                     val record = EvaluationRecord(
-                        bundle?.getString("gpsIdPlace").toString(),
+                        bundle?.getString("IdPlace").toString(),
                         bundle?.getString("namePlace").toString(),
                         bundle?.getString("nameEvaluated").toString(),
                         bundle?.getString("dateEvaluation").toString(),

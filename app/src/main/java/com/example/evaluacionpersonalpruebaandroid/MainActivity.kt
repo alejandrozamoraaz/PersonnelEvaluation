@@ -1,7 +1,11 @@
 package com.example.evaluacionpersonalpruebaandroid
 
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
+import android.text.TextUtils
 import android.view.Menu
 import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
