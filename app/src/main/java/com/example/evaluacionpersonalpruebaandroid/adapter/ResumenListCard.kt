@@ -2,62 +2,60 @@ package com.example.evaluacionpersonalpruebaandroid.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.evaluacionpersonalpruebaandroid.MainActivity
 import com.example.evaluacionpersonalpruebaandroid.R
 import com.example.evaluacionpersonalpruebaandroid.model.EvaluationRecord
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 
-class ResumenListCard(private val modelList: List<EvaluationRecord>) :
+class ResumenListCard(private var modelList: List<EvaluationRecord>) :
     RecyclerView.Adapter<ResumenListCard.ViewHolder>() {
 
 
     private lateinit var context:Context
-    private lateinit var viewDetails: View
+    private lateinit var viewDetail: View
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val viewResume: View = LayoutInflater.from(parent.context).inflate(R.layout.card_evaluated_resumen, parent, false)
-        viewDetails = LayoutInflater.from(parent.context).inflate(R.layout.fragment_evaluated_details_dialog, parent, false)
+        val viewDetails:View = LayoutInflater.from(parent.context).inflate(R.layout.fragment_evaluated_details_dialog, parent, false)
         context = parent.context
 
+        viewDetail = viewDetails
         return ViewHolder(viewResume,viewDetails)
     }
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.nameEvaluatedDialog.text = modelList[position].nameEvaluated
+        holder.placeEvaluationDialog.text = modelList[position].namePlace
+        holder.dateEvaluationDialog.text = modelList[position].dateEvaluation
+        
+        holder.cleanSuit.isChecked = modelList[position].cleanSuit
+        holder.cleanNails.isChecked = modelList[position].cleanNails
+        holder.combedHair.isChecked = modelList[position].combedHair
+        holder.faceMask.isChecked = modelList[position].faceMask
+        holder.cap.isChecked = modelList[position].cap
+        holder.courtesy.isChecked = modelList[position].courtesy
+        holder.clientsServed.text = modelList[position].clientsServed.toString()
+        holder.servicesSold.text = modelList[position].servicesSold.toString()
+
         holder.nameEvaluated.text = "Nombre: " + modelList[position].nameEvaluated
         holder.placeEvaluation.text = "Lugar: " + modelList[position].namePlace
         holder.dateEvaluation.text = "Fecha: " + modelList[position].dateEvaluation
 
         holder.itemCard.setOnClickListener {
-            if (viewDetails.parent != null) {
-                (viewDetails.parent as ViewGroup).removeView(viewDetails)
+            if (viewDetail.parent != null) {
+                (viewDetail.parent as ViewGroup).removeView(viewDetail)
             }else {
-                holder.nameEvaluatedDialog.text = modelList[position].nameEvaluated
-                holder.placeEvaluationDialog.text = modelList[position].namePlace
-                holder.dateEvaluationDialog.text = modelList[position].dateEvaluation
-
-                holder.cleanSuit.isChecked = modelList[position].cleanSuit
-                holder.cleanNails.isChecked = modelList[position].cleanNails
-                holder.combedHair.isChecked = modelList[position].combedHair
-                holder.faceMask.isChecked = modelList[position].faceMask
-                holder.cap.isChecked = modelList[position].cap
-                holder.courtesy.isChecked = modelList[position].courtesy
-                holder.clientsServed.text = modelList[position].clientsServed.toString()
-                holder.servicesSold.text = modelList[position].servicesSold.toString()
-
                 val dialog = BottomSheetDialog(context)
-                dialog.setContentView(viewDetails)
+                dialog.setContentView(viewDetail)
                 dialog.show()
-
-                Toast.makeText(context,"${modelList[position].nameEvaluated} ${modelList[position].namePlace} ${modelList[position].dateEvaluation}",Toast.LENGTH_LONG).show()
+                //Toast.makeText(context,"${modelList[position].nameEvaluated} ${modelList[position].namePlace} ${modelList[position].dateEvaluation}",Toast.LENGTH_LONG).show()
             }
         }
     }
